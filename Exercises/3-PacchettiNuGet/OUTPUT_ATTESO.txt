@@ -1,0 +1,35 @@
+=====================================================================
+COME DEVE COMPORTARSI IL PROGRAMMA UNA VOLTA SCRITTO
+EN: HOW THE PROGRAM MUST BEHAVE ONCE IT IS WRITTEN
+=====================================================================
+
+> dotnet run
+Women
+
+
+Attenzione: non e' "Womans". Humanizer conosce i plurali irregolari
+dell'inglese, ed e' proprio per non doverli scrivere a mano che
+conviene usare un pacchetto gia' fatto.
+EN: Watch out: it is not "Womans". Humanizer knows the irregular plurals
+EN: of English, and it is exactly so as not to have to write them by hand
+EN: that it is worth using a ready-made package.
+
+
+=====================================================================
+PER CHI VA AVANTI: altre prove da fare
+EN: FOR THOSE WHO GO FURTHER: other things to try
+=====================================================================
+
+"car".Pluralize()      ->  cars
+"box".Pluralize()      ->  boxes
+"child".Pluralize()    ->  children
+"Ferrari".Pluralize()  ->  Ferraris
+"Women".Singularize()  ->  Woman
+
+5.ToWords()            ->  cinque
+3.Ordinalize()         ->  3°
+
+Le ultime due seguono la lingua impostata sul computer: su un PC in
+italiano danno "cinque" e "3°", su uno in inglese "five" e "3rd".
+EN: The last two follow the language set on the computer: on an Italian
+EN: PC they give "cinque" and "3°", on an English one "five" and "3rd".
