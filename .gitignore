@@ -1,0 +1,70 @@
+# --- Cartella di lavoro personale del docente (non va distribuita) ---
+_test/
+
+# --- Build .NET ---
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+build/
+bld/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+publish/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.cache
+*.pdb
+project.lock.json
+project.fragment.lock.json
+
+# --- Visual Studio / Rider / VS Code ---
+.vs/
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.DotSettings.user
+
+# --- NuGet ---
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+*.nuget.props
+*.nuget.targets
+
+# --- Database locali ---
+*.mdf
+*.ldf
+*.ndf
+
+# --- File di sistema ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- File temporanei ---
+*.tmp
+*.bak
+*~
+test.txt
+
+# --- Segreti: MAI committare ---
+appsettings.*.local.json
+secrets.json
+.env
+*.pfx
+*.key
