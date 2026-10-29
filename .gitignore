@@ -1,16 +1,22 @@
 # --- File personali del docente (non vanno distribuiti) ---
+# EN: Teacher's personal files (not to be distributed)
 _test/
 CLAUDE.md
 
 # --- Lavoro degli studenti: non viene MAI versionato ---
+# EN: Students' work: NEVER put under version control
 # La cartella arriva vuota con il repository; tutto cio' che gli studenti
 # ci mettono dentro resta solo sul loro computer, quindi un "git pull"
 # non puo' sovrascriverlo.
+# EN: The folder arrives empty with the repository; everything the students
+# EN: put in it stays only on their own computer, so a "git pull"
+# EN: cannot overwrite it.
 MyExercises/*
 !MyExercises/.gitkeep
 !MyExercises/README.md
 
 # --- Build .NET ---
+# EN: .NET build output
 [Bb]in/
 [Oo]bj/
 [Dd]ebug/
@@ -54,11 +60,13 @@ packages/
 *.nuget.targets
 
 # --- Database locali ---
+# EN: Local databases
 *.mdf
 *.ldf
 *.ndf
 
 # --- File di sistema ---
+# EN: System files
 Thumbs.db
 ehthumbs.db
 Desktop.ini
@@ -66,12 +74,14 @@ $RECYCLE.BIN/
 .DS_Store
 
 # --- File temporanei ---
+# EN: Temporary files
 *.tmp
 *.bak
 *~
 test.txt
 
 # --- Segreti: MAI committare ---
+# EN: Secrets: NEVER commit them
 appsettings.*.local.json
 secrets.json
 .env
