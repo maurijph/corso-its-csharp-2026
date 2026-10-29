@@ -1,0 +1,19 @@
+=== ESERCIZIO 1: conteggio in un array ===
+Gare analizzate: 6
+Leclerc ha vinto 3 volte (ciclo for).
+Leclerc ha vinto 3 volte (ciclo foreach).
+
+=== ESERCIZIO 2: diagonale di una matrice ===
+  25  18  15
+  12  25  10
+   8   6  25
+Somma della diagonale principale: 75
+
+=== ESERCIZIO 3: ricerca in una lista ===
+La scuderia McLaren è presente nella lista.
+La scuderia Minardi NON è presente nella lista.
+
+=== ESERCIZIO 4: media di una lista ===
+Potenze: 950, 1000, 980, 1010, 990
+Somma: 4930 CV
+Media: 986,00 CV
