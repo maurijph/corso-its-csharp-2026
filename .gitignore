@@ -2,6 +2,14 @@
 _test/
 CLAUDE.md
 
+# --- Lavoro degli studenti: non viene MAI versionato ---
+# La cartella arriva vuota con il repository; tutto cio' che gli studenti
+# ci mettono dentro resta solo sul loro computer, quindi un "git pull"
+# non puo' sovrascriverlo.
+MyExercises/*
+!MyExercises/.gitkeep
+!MyExercises/README.md
+
 # --- Build .NET ---
 [Bb]in/
 [Oo]bj/

@@ -36,10 +36,15 @@ git pull
 
 | Cartella | Cosa contiene |
 |---|---|
-| [`Slide/`](Slide/) | Le slide di ogni lezione, in PDF |
-| [`Esercitazioni/`](Esercitazioni/) | Il codice degli esercizi svolti in aula, una cartella per esercitazione |
-| [`Soluzioni/`](Soluzioni/) | Le soluzioni degli esercizi, pubblicate **dopo** la lezione |
-| [`Risorse/`](Risorse/) | Link utili, cheat sheet, materiale di approfondimento |
+| [`Slides/`](Slides/) | Le slide di ogni lezione, in PDF |
+| [`Exercises/`](Exercises/) | Il codice degli esercizi svolti in aula. Una cartella per esercitazione, numerata in ordine di lezione: `1-PrimoProgramma`, `2-ArgomentiRigaDiComando`, ... |
+| [`Solutions/`](Solutions/) | Le soluzioni degli esercizi, pubblicate **dopo** la lezione |
+| [`Resources/`](Resources/) | Link utili, cheat sheet, materiale di approfondimento |
+| [`MyExercises/`](MyExercises/) | **La tua cartella di lavoro.** Resta sul tuo computer: gli aggiornamenti non la toccano mai |
+
+> **Regola d'oro:** scrivi codice solo dentro `MyExercises/`. Le altre cartelle
+> le aggiorno io a fine giornata, e le tue modifiche andrebbero perse.
+> Trovi le istruzioni in [`MyExercises/README.md`](MyExercises/README.md).
 
 ---
 
@@ -47,7 +52,7 @@ git pull
 
 Le esercitazioni sono progetti **.NET in C#**. Ti serve:
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (versione 8 o superiore)
+- [.NET SDK](https://dotnet.microsoft.com/download) (versione 10 o superiore)
 - Un editor: [Visual Studio Community](https://visualstudio.microsoft.com/it/vs/community/) (gratuito) oppure [Visual Studio Code](https://code.visualstudio.com/) con l'estensione **C# Dev Kit**
 
 Per eseguire un'esercitazione da terminale, entra nella sua cartella e lancia:

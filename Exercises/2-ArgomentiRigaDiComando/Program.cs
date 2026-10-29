@@ -1,4 +1,4 @@
-﻿namespace Esercitazione2Plus;
+﻿namespace ArgomentiRigaDiComando;
 
 class Program
 {
