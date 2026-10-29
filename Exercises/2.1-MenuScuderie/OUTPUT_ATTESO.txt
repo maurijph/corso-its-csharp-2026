@@ -1,0 +1,59 @@
+=====================================================================
+COME SI COMPORTA IL PROGRAMMA ADESSO (con il difetto)
+EN: HOW THE PROGRAM BEHAVES NOW (with the defect)
+=====================================================================
+
+> dotnet run -- 2
+SCUDERIE F1
+===========
+1. Ferrari
+2. McLaren
+3. Red Bull
+Hai scelto McLaren
+
+> dotnet run
+SCUDERIE F1
+===========
+1. Ferrari
+2. McLaren
+3. Red Bull
+Unhandled exception. System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at MenuScuderie.Program.Main(String[] args)
+
+
+=====================================================================
+COME DEVE COMPORTARSI DOPO LA TUA CORREZIONE
+EN: HOW IT MUST BEHAVE AFTER YOUR FIX
+=====================================================================
+
+> dotnet run
+SCUDERIE F1
+===========
+1. Ferrari
+2. McLaren
+3. Red Bull
+Nessuna scuderia selezionata. Esempio d'uso: dotnet run -- 1
+
+> dotnet run -- 1
+SCUDERIE F1
+===========
+1. Ferrari
+2. McLaren
+3. Red Bull
+Hai scelto Ferrari
+
+> dotnet run -- 3
+SCUDERIE F1
+===========
+1. Ferrari
+2. McLaren
+3. Red Bull
+Hai scelto Red Bull
+
+> dotnet run -- 9
+SCUDERIE F1
+===========
+1. Ferrari
+2. McLaren
+3. Red Bull
+Scelta non valida

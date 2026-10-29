@@ -1,0 +1,56 @@
+=====================================================================
+COME DEVE COMPORTARSI IL PROGRAMMA UNA VOLTA SCRITTO
+EN: HOW THE PROGRAM MUST BEHAVE ONCE IT IS WRITTEN
+=====================================================================
+
+> dotnet run -- Panda 69
+CATEGORIA AUTO
+==============
+Panda: Auto stradale
+
+> dotnet run -- Giulia 280
+CATEGORIA AUTO
+==============
+Giulia: Auto sportiva
+
+> dotnet run -- SF-25 1000
+CATEGORIA AUTO
+==============
+SF-25: Auto da corsa
+
+
+=====================================================================
+I DUE CASI DI CONFINE: controlla che cadano nella categoria giusta
+EN: THE TWO BORDERLINE CASES: check they fall in the right category
+=====================================================================
+
+> dotnet run -- Confine 199
+CATEGORIA AUTO
+==============
+Confine: Auto stradale
+
+> dotnet run -- Confine 200
+CATEGORIA AUTO
+==============
+Confine: Auto sportiva
+
+> dotnet run -- Confine 599
+CATEGORIA AUTO
+==============
+Confine: Auto sportiva
+
+> dotnet run -- Confine 600
+CATEGORIA AUTO
+==============
+Confine: Auto da corsa
+
+
+=====================================================================
+E QUESTO? Provalo e annota che cosa succede: ne parliamo in aula.
+EN: AND THIS ONE? Try it and write down what happens: we discuss it in class.
+=====================================================================
+
+> dotnet run -- SF-25 mille
+CATEGORIA AUTO
+==============
+...?
