@@ -66,6 +66,9 @@ WriteLine();
 // ---------------------------------------------------------------------
 Pilota pilota = new Pilota("Charles Leclerc", 16);
 WriteLine(pilota.Presentati());
+
+Pilota pilotaConScuderia = new Pilota("Max Verstappen", 1, "Red Bull");
+WriteLine(pilotaConScuderia.PresentatiConScuderia());
 WriteLine();
 
 
@@ -94,16 +97,31 @@ return 0;
 class Pilota
 {
     public string Nome { get; }
+    public string Scuderia { get; }
     public int Numero { get; }
 
     public Pilota(string nome, int numero)
     {
         Nome = nome;
         Numero = numero;
+        Scuderia = "Non assegnata";
+    }
+
+    public Pilota(string nome, int numero, string scuderia)
+    {
+        Nome = nome;
+        Numero = numero;
+        Scuderia = scuderia;
     }
 
     public string Presentati()
     {
         return $"Sono {Nome} e corro con il numero {Numero}.";
+    }
+
+
+    public string PresentatiConScuderia()
+    {
+        return $"Sono {Nome}, corro con il numero {Numero} e faccio parte della scuderia {Scuderia}.";
     }
 }

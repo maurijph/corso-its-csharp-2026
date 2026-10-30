@@ -5,7 +5,6 @@
 // EN: C# and .NET 10 course - RacingSystem
 // =====================================================================
 
-
 // ---------------------------------------------------------------------
 // ESERCIZIO 1
 // Array di stringhe: contare quante volte compare un valore
