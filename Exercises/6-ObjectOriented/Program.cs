@@ -19,6 +19,9 @@
 // EN: EXERCISE 1
 // EN: Encapsulation: the internal state is changed only by public methods
 // ---------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
 Console.WriteLine("=== ESERCIZIO 1: incapsulamento ===");
 
 Motore motore = new Motore();

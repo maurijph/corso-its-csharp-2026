@@ -11,6 +11,9 @@
 // EN: EXERCISE 1
 // EN: Array of strings: count how many times a value appears
 // ---------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
 Console.WriteLine("=== ESERCIZIO 1: conteggio in un array ===");
 
 // Vincitori delle ultime gare
