@@ -1,0 +1,99 @@
+=====================================================================
+COME SI COMPORTA IL PROGRAMMA
+EN: HOW THE PROGRAM BEHAVES
+=====================================================================
+
+> dotnet run
+
+=== ESERCIZIO 1: incapsulamento ===
+Dopo Accelera(5000): 5000 giri/min
+Dopo Accelera(100000): 15000 giri/min (limitato)
+
+=== ESERCIZIO 2: ereditarietà ===
+Mi chiamo Panda di servizio.
+Mi chiamo Ferrari SF-26.
+Mi chiamo Red Bull RB22.
+Cavalli (ereditati da AutoDaCorsa): 1050
+
+=== ESERCIZIO 3: polimorfismo ===
+Panda di servizio: un veicolo come tanti.
+Ferrari SF-26: auto da corsa da 1000 CV.
+Red Bull RB22: monoposto di Formula 1 numero 1, 1050 CV.
+
+
+=====================================================================
+DA RICORDARE
+EN: WORTH REMEMBERING
+=====================================================================
+
+INCAPSULAMENTO
+Il campo _giri e' private: da fuori non si vede. Per cambiarlo si passa
+dal metodo pubblico Accelera, che controlla il valore e tiene l'oggetto
+sempre in uno stato valido. Chi usa il Motore lo vede come una
+black-box: sa che cosa fa, non come lo fa.
+EN: ENCAPSULATION
+EN: The _giri field is private: it cannot be seen from outside. To change
+EN: it you go through the public Accelera method, which checks the value
+EN: and keeps the object always in a valid state. Whoever uses Motore
+EN: sees it as a black-box: they know what it does, not how it does it.
+
+EREDITARIETÀ
+Veicolo e' la classe base, AutoDaCorsa e Formula1 sono classi derivate.
+Presentati() e' scritto una volta sola e vale per tutte e tre.
+Una classe derivata ha una sola classe base diretta, ma l'ereditarieta'
+e' transitiva: Formula1 deriva da AutoDaCorsa, che deriva da Veicolo,
+quindi Formula1 eredita anche da Veicolo.
+EN: INHERITANCE
+EN: Veicolo is the base class, AutoDaCorsa and Formula1 are derived
+EN: classes. Presentati() is written only once and holds for all three.
+EN: A derived class has only one direct base class, but inheritance is
+EN: transitive: Formula1 derives from AutoDaCorsa, which derives from
+EN: Veicolo, so Formula1 inherits from Veicolo too.
+
+POLIMORFISMO
+Nella List<Veicolo> ci stanno oggetti di tutte e tre le classi: un
+oggetto derivato puo' essere trattato come un oggetto della classe base.
+Nel foreach la variabile v e' dichiarata Veicolo, ma v.Descrivi() stampa
+tre frasi diverse: a runtime il CLR guarda il tipo vero dell'oggetto e
+chiama l'override giusto.
+EN: POLYMORPHISM
+EN: The List<Veicolo> holds objects of all three classes: a derived
+EN: object can be treated as an object of the base class. In the foreach
+EN: the v variable is declared as Veicolo, but v.Descrivi() prints three
+EN: different sentences: at runtime the CLR looks at the real type of the
+EN: object and calls the right override.
+
+
+=====================================================================
+PROVA A SBAGLIARE APPOSTA
+EN: TRY GETTING IT WRONG ON PURPOSE
+=====================================================================
+
+1. Scrivi "motore._giri = 20000;" fra le istruzioni: il compilatore si
+   ferma con l'errore CS0122, "non accessibile a causa del livello di
+   protezione". E' l'incapsulamento che fa il suo lavoro.
+
+2. Togli la parola "virtual" da Descrivi() in Veicolo: il progetto non
+   compila piu' e arriva l'errore CS0506, "non e' possibile eseguire
+   l'override del membro ereditato perche' non e' contrassegnato come
+   virtual". Senza virtual non c'e' niente di cui fare l'override.
+
+3. Rimetti virtual ma togli gli "override" dalle classi derivate (lascia
+   solo "public string Descrivi()"): il programma compila, con l'avviso
+   CS0114 "nasconde il membro ereditato", ma il foreach stampa tre volte
+   "un veicolo come tanti". Senza override il polimorfismo sparisce e
+   vince sempre la versione della classe base.
+
+EN: 1. Write "motore._giri = 20000;" among the statements: the compiler
+EN:    stops with error CS0122, "inaccessible due to its protection
+EN:    level". That is encapsulation doing its job.
+EN: 2. Remove the "virtual" keyword from Descrivi() in Veicolo: the
+EN:    project no longer compiles and you get error CS0506, "cannot
+EN:    override inherited member because it is not marked virtual".
+EN:    Without virtual there is nothing to override.
+EN: 3. Put virtual back but remove the "override" keywords from the
+EN:    derived classes (leave only "public string Descrivi()"): the
+EN:    program compiles, with warning CS0114 "hides inherited member",
+EN:    but the foreach prints "un veicolo come tanti" three times.
+EN:    Without override polymorphism disappears and the base class
+EN:    version always wins.

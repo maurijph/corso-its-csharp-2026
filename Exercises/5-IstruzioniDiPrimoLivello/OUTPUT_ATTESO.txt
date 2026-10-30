@@ -1,0 +1,69 @@
+=====================================================================
+COME SI COMPORTA IL PROGRAMMA
+EN: HOW THE PROGRAM BEHAVES
+=====================================================================
+
+> dotnet run
+
+=== ISTRUZIONI DI PRIMO LIVELLO ===
+Il programma parte da qui: non serve scrivere il metodo Main.
+
+Argomenti ricevuti: 0
+
+Sono Charles Leclerc e corro con il numero 16.
+
+Fine del programma: restituisco 0.
+
+
+=====================================================================
+LO STESSO PROGRAMMA CON ARGOMENTI SULLA RIGA DI COMANDO
+EN: THE SAME PROGRAM WITH COMMAND LINE ARGUMENTS
+=====================================================================
+
+> dotnet run -- Leclerc Norris
+
+=== ISTRUZIONI DI PRIMO LIVELLO ===
+Il programma parte da qui: non serve scrivere il metodo Main.
+
+Argomenti ricevuti: 2
+  - Leclerc
+  - Norris
+
+Sono Charles Leclerc e corro con il numero 16.
+
+Fine del programma: restituisco 0.
+
+
+=====================================================================
+DA RICORDARE
+EN: WORTH REMEMBERING
+=====================================================================
+
+- Un progetto puo' avere un solo file con istruzioni di primo livello.
+- Le direttive using vanno in cima, prima di qualsiasi istruzione.
+- Le istruzioni di primo livello stanno nello spazio dei nomi globale.
+- Spazi dei nomi e definizioni di tipi vanno DOPO le istruzioni.
+- return restituisce il valore di uscita, come in un Main che torna un int.
+EN: - A project can have only one file with top-level statements.
+EN: - using directives go at the top, before any statement.
+EN: - Top-level statements live in the global namespace.
+EN: - Namespaces and type definitions go AFTER the statements.
+EN: - return gives the exit value, as in a Main returning an int.
+
+
+=====================================================================
+PROVA A SBAGLIARE APPOSTA
+EN: TRY GETTING IT WRONG ON PURPOSE
+=====================================================================
+
+Sposta la classe Pilota subito sotto la riga "using static", quindi
+prima delle istruzioni, e rilancia "dotnet run": il programma non parte
+nemmeno, perche' il compilatore si ferma con l'errore
+
+    error CS8803: Le istruzioni di primo livello devono precedere le
+                  dichiarazioni di tipo e di spazio dei nomi.
+
+EN: Move the Pilota class right below the "using static" line, that is
+EN: before the statements, and run "dotnet run" again: the program does
+EN: not even start, because the compiler stops with error CS8803,
+EN: "Top-level statements must precede namespace and type declarations".
