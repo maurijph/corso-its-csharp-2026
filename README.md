@@ -70,7 +70,7 @@ git pull
 | Cartella | Cosa contiene |
 |---|---|
 | [`Slides/`](Slides/) | Le slide di ogni lezione, in PDF |
-| [`Exercises/`](Exercises/) | Il codice degli esercizi svolti in aula. Una cartella per esercitazione, numerata in ordine di lezione: `1-PrimoProgramma`, `2-ArgomentiRigaDiComando`, ... |
+| [`Exercises/`](Exercises/) | Il codice degli esercizi svolti in aula. Una cartella per esercitazione, numerata in ordine di esercitazione: `1-PrimoProgramma`, `2-ArgomentiRigaDiComando`, ... |
 | [`Solutions/`](Solutions/) | Le soluzioni degli esercizi, pubblicate **dopo** la lezione |
 | [`Resources/`](Resources/) | Link utili, cheat sheet, materiale di approfondimento |
 | [`MyExercises/`](MyExercises/) | **La tua cartella di lavoro.** Resta sul tuo computer: gli aggiornamenti non la toccano mai |
@@ -85,7 +85,7 @@ git pull
 
 Le esercitazioni sono progetti **.NET in C#**. Ti serve:
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (versione 10 o superiore)
+- [.NET SDK](https://dotnet.microsoft.com/download) (versione 8 e 10)
 - Un editor: [Visual Studio Community](https://visualstudio.microsoft.com/it/vs/community/) (gratuito) oppure [Visual Studio Code](https://code.visualstudio.com/) con l'estensione **C# Dev Kit**
 
 Per eseguire un'esercitazione da terminale, entra nella sua cartella e lancia:
@@ -184,7 +184,7 @@ git pull
 | Folder | What it contains |
 |---|---|
 | [`Slides/`](Slides/) | The slides of each lesson, as PDF |
-| [`Exercises/`](Exercises/) | The code of the exercises done in class. One folder per exercise session, numbered in lesson order: `1-PrimoProgramma`, `2-ArgomentiRigaDiComando`, ... |
+| [`Exercises/`](Exercises/) | The code of the exercises done in class. One folder per exercise session, numbered in lesson order of exercises: `1-PrimoProgramma`, `2-ArgomentiRigaDiComando`, ... |
 | [`Solutions/`](Solutions/) | The solutions of the exercises, published **after** the lesson |
 | [`Resources/`](Resources/) | Useful links, cheat sheets, further reading |
 | [`MyExercises/`](MyExercises/) | **Your working folder.** It stays on your computer: updates never touch it |
@@ -199,7 +199,7 @@ git pull
 
 The exercises are **.NET projects in C#**. You need:
 
-- The [.NET SDK](https://dotnet.microsoft.com/download) (version 10 or later)
+- The [.NET SDK](https://dotnet.microsoft.com/download) (version 8 and 10)
 - An editor: [Visual Studio Community](https://visualstudio.microsoft.com/it/vs/community/) (free) or [Visual Studio Code](https://code.visualstudio.com/) with the **C# Dev Kit** extension
 
 To run an exercise from the terminal, enter its folder and launch:
