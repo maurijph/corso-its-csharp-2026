@@ -1,0 +1,29 @@
+@9_CrudPersoneCSR_HostAddress = http://localhost:5158
+
+GET {{9_CrudPersoneCSR_HostAddress}}/getPeople
+Accept: application/json
+
+###
+
+POST {{9_CrudPersoneCSR_HostAddress}}/create
+Content-Type: application/json
+
+{ "id": 1, "name": "Mario Rossi", "age": 30 }
+
+###
+
+GET {{9_CrudPersoneCSR_HostAddress}}/getPerson/1
+Accept: application/json
+
+###
+
+PUT {{9_CrudPersoneCSR_HostAddress}}/update
+Content-Type: application/json
+
+{ "id": 1, "name": "Mario Rossi", "age": 31 }
+
+###
+
+DELETE {{9_CrudPersoneCSR_HostAddress}}/delete/1
+
+###
