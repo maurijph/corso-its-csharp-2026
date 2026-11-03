@@ -50,16 +50,31 @@ Nota due cose:
 
 ## Passo 3 — Copia i due file
 
-Da [`Resources/Esercitazione8`](../../Resources/Esercitazione8) copia nella tua
-cartella `MyExercises/8-CrudPersone`:
+In [`Resources/Esercitazione8`](../../Resources/Esercitazione8) ci sono due file:
 
-- **`Program.cs`** — sostituisce quello creato da `dotnet new`: quando ti chiede se
-  sovrascriverlo, rispondi di sì.
-- **`Person.cs`** — è un file nuovo, mettilo accanto a `Program.cs`.
+- **`Program.cs`** — deve **sostituire** il `Program.cs` creato da `dotnet new`.
+- **`Person.cs`** — è un file nuovo, va accanto a `Program.cs`.
+
+> ⚠️ **Prima cancella** il `Program.cs` creato da `dotnet new`, **poi** incolla i due
+> file. Se incolli senza cancellare, VS Code non sostituisce il file che c'è già: ne
+> crea uno nuovo chiamato **`Program copy.cs`**. Con due file `Program` il progetto
+> **non compila**.
+
+**Controlla prima di andare avanti.** Nella cartella devi vedere `Program.cs` e
+`Person.cs`. Se vedi un file con `copy` nel nome, la copia non è andata bene: cancella
+`Program.cs`, poi rinomina `Program copy.cs` in `Program.cs`.
 
 Leggi i commenti dentro i due file: spiegano riga per riga come funziona l'API.
 
-## Passo 4 — Avvia e prova
+## Passo 4 — Sistemare versione Swagger
+Aggiornare il package `Swashbuckle.AspNetCore`:
+
+
+```bash
+dotnet add package Swashbuckle.AspNetCore
+```
+
+## Passo 5 — Avvia e prova
 
 ```bash
 dotnet run
@@ -77,6 +92,45 @@ Apri il browser su quell'indirizzo aggiungendo `/swagger` in fondo, per esempio
 **Try it out** e poi **Execute** per provarlo.
 
 Per fermare l'API torna nel terminale e premi `Ctrl+C`.
+
+## Passo 6 — Ricontrolla le versioni dei pacchetti NuGet
+
+Oltre che da Swagger, l'API si può provare anche con il **client HTTP integrato**
+nell'editor: il file `8-CrudPersone.http`, creato da `dotnet new`, che contiene le
+richieste da inviare con un clic su **Send Request**.
+
+Se in questa fase compaiono errori dentro Swagger o OpenAPI, per esempio:
+
+```
+error CS0246: Il nome di tipo o di spazio dei nomi 'OpenApiOperationTransformerContext' non è stato trovato
+```
+
+il motivo quasi sempre è che **le versioni dei pacchetti non vanno d'accordo con
+.NET 8**. Il comando `dotnet add package` installa l'ultima versione disponibile,
+anche se è pensata per una versione di .NET più nuova.
+
+Apri il file `8-CrudPersone.csproj` e guarda le righe `PackageReference`:
+
+| Pacchetto | Versione giusta per .NET 8 |
+|---|---|
+| `Microsoft.AspNetCore.OpenApi` | deve iniziare con **8** (es. `8.0.11`) |
+| `Swashbuckle.AspNetCore` | deve iniziare con **6** (es. `6.9.0`) |
+
+Se trovi numeri diversi (per esempio `10.x`), cerca il pacchetto su
+[nuget.org](https://www.nuget.org), apri la scheda **Versions**, scegli l'ultima
+versione che inizia con il numero giusto e installala indicandola con `--version`:
+
+```bash
+dotnet add package Microsoft.AspNetCore.OpenApi --version 8.0.11
+dotnet add package Swashbuckle.AspNetCore --version 6.9.0
+```
+
+Poi ricompila da zero:
+
+```bash
+dotnet clean
+dotnet build
+```
 
 ## Che cosa provare
 
@@ -156,16 +210,31 @@ Notice two things:
 
 ### Step 3 — Copy the two files
 
-From [`Resources/Esercitazione8`](../../Resources/Esercitazione8) copy into your
-`MyExercises/8-CrudPersone` folder:
+In [`Resources/Esercitazione8`](../../Resources/Esercitazione8) there are two files:
 
-- **`Program.cs`** — it replaces the one created by `dotnet new`: when asked whether
-  to overwrite it, answer yes.
-- **`Person.cs`** — it is a new file, put it next to `Program.cs`.
+- **`Program.cs`** — it must **replace** the `Program.cs` created by `dotnet new`.
+- **`Person.cs`** — it is a new file, it goes next to `Program.cs`.
+
+> ⚠️ **First delete** the `Program.cs` created by `dotnet new`, **then** paste the two
+> files. If you paste without deleting, VS Code does not replace the file that is
+> already there: it creates a new one called **`Program copy.cs`**. With two `Program`
+> files the project **does not compile**.
+
+**Check before moving on.** In the folder you must see `Program.cs` and `Person.cs`.
+If you see a file with `copy` in its name, the copy went wrong: delete `Program.cs`,
+then rename `Program copy.cs` to `Program.cs`.
 
 Read the comments inside the two files: they explain line by line how the API works.
 
-### Step 4 — Run and try it
+### Step 4 — Fix the Swagger version
+
+Update the `Swashbuckle.AspNetCore` package:
+
+```bash
+dotnet add package Swashbuckle.AspNetCore
+```
+
+### Step 5 — Run and try it
 
 ```bash
 dotnet run
@@ -183,6 +252,45 @@ Open the browser at that address adding `/swagger` at the end, for example
 **Try it out** and then **Execute** to try it.
 
 To stop the API go back to the terminal and press `Ctrl+C`.
+
+### Step 6 — Check the NuGet package versions again
+
+Besides Swagger, you can also try the API with the **HTTP client built into** the
+editor: the `8-CrudPersone.http` file, created by `dotnet new`, which holds the
+requests to send with a click on **Send Request**.
+
+If errors inside Swagger or OpenAPI show up at this point, for example:
+
+```
+error CS0246: The type or namespace name 'OpenApiOperationTransformerContext' could not be found
+```
+
+the reason is almost always that **the package versions do not match .NET 8**.
+The `dotnet add package` command installs the latest available version, even when
+it is meant for a newer version of .NET.
+
+Open the `8-CrudPersone.csproj` file and look at the `PackageReference` lines:
+
+| Package | Right version for .NET 8 |
+|---|---|
+| `Microsoft.AspNetCore.OpenApi` | must start with **8** (e.g. `8.0.11`) |
+| `Swashbuckle.AspNetCore` | must start with **6** (e.g. `6.9.0`) |
+
+If you find different numbers (for example `10.x`), look the package up on
+[nuget.org](https://www.nuget.org), open the **Versions** tab, pick the latest
+version that starts with the right number and install it with `--version`:
+
+```bash
+dotnet add package Microsoft.AspNetCore.OpenApi --version 8.0.11
+dotnet add package Swashbuckle.AspNetCore --version 6.9.0
+```
+
+Then rebuild from scratch:
+
+```bash
+dotnet clean
+dotnet build
+```
 
 ### What to try
 
