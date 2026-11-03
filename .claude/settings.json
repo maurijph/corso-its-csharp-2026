@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Read(//c/Users/mluci/AppData/Roaming/Code/User/**)",
-      "WebSearch"
+      "WebSearch",
+      "PowerShell(dotnet build \"C:\\\\Dev\\\\CorsoITS\\\\Exercises\\\\8.1-CrudPiloti\\\\8.1-CrudPiloti.csproj\" -v q -nologo)"
     ]
   }
 }
