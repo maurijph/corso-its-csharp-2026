@@ -3,7 +3,11 @@
     "allow": [
       "Read(//c/Users/mluci/AppData/Roaming/Code/User/**)",
       "WebSearch",
-      "PowerShell(dotnet build \"C:\\\\Dev\\\\CorsoITS\\\\Exercises\\\\8.1-CrudPiloti\\\\8.1-CrudPiloti.csproj\" -v q -nologo)"
+      "PowerShell(dotnet build \"C:\\\\Dev\\\\CorsoITS\\\\Exercises\\\\8.1-CrudPiloti\\\\8.1-CrudPiloti.csproj\" -v q -nologo)",
+      "PowerShell($b=\"C:\\\\Dev\\\\CorsoITS\\\\_test\\\\EsercitazioneSquadra\\\\EsercitazioneSquadra\"; foreach\\($f in \"Partenza\\\\Squadra\\\\.gitignore\",\"Partenza\\\\Squadra\\\\Data\\\\Rosa.cs\",\"Partenza\\\\Squadra\\\\Models\\\\Giocatore.cs\",\"Soluzione\\\\Squadra\\\\Collaudo.http\",\"Partenza\\\\Squadra\\\\Properties\\\\launchSettings.json\"\\){ \"=== $f\"; Get-Content \"$b\\\\$f\" -Raw }; $n=\"C:\\\\Dev\\\\CorsoITS\\\\Exercises\\\\9-CrudPersoneCSR\"; foreach\\($f in \"9-CrudPersoneCSR.csproj\",\"9-CrudPersoneCSR.http\",\"Properties\\\\launchSettings.json\",\"Person.cs\",\"appsettings.json\"\\){ \"=== $f\"; Get-Content \"$n\\\\$f\" -Raw }; \"=== 8.1 Program\"; Get-Content C:\\\\Dev\\\\CorsoITS\\\\Exercises\\\\8.1-CrudPiloti\\\\Program.cs -Raw; \"=== sdks\"; dotnet --list-sdks)",
+      "PowerShell(dotnet build \"C:\\\\Dev\\\\CorsoITS\\\\_test\\\\EsercitazioneF1\\\\Soluzione\\\\CampionatoF1\\\\CampionatoF1.csproj\" -nologo -v q 2>&1)",
+      "PowerShell($h=\"C:\\\\Dev\\\\CorsoITS\\\\_test\\\\EsercitazioneF1\\\\Soluzione\\\\CampionatoF1\\\\Http\"; & \"C:\\\\Users\\\\mluci\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Dev-CorsoITS\\\\a1a11459-cf45-4c33-8b72-6fab6e46aba8\\\\scratchpad\\\\run-http.ps1\" -Files \"$h\\\\Scuderie.http\",\"$h\\\\Circuiti.http\",\"$h\\\\Piloti.http\",\"$h\\\\Gare.http\",\"$h\\\\Risultati.http\",\"$h\\\\Classifiche.http\")",
+      "PowerShell($r = Invoke-WebRequest http://localhost:5090/swagger/v1/swagger.json -UseBasicParsing; \"swagger.json: $\\($r.StatusCode\\), $\\($r.Content.Length\\) byte\"; \\([regex]::Matches\\($r.Content, '\"/[a-z/{}A-Z]+\"'\\) | ForEach-Object Value\\) -join ' '; Stop-Process -Id \\(Get-Content \"C:\\\\Users\\\\mluci\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Dev-CorsoITS\\\\a1a11459-cf45-4c33-8b72-6fab6e46aba8\\\\scratchpad\\\\pid.txt\"\\) -Force; Get-Process CampionatoF1 -ErrorAction SilentlyContinue | Stop-Process -Force; \"stopped\")"
     ]
   }
 }

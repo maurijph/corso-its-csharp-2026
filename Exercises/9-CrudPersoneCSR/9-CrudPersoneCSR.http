@@ -17,6 +17,29 @@ Accept: application/json
 
 ###
 
+# Persona minorenne: viene creata, ma non compare in /getAdults
+# EN: Underage person: it is created, but it does not show up in /getAdults
+POST {{9_CrudPersoneCSR_HostAddress}}/create
+Content-Type: application/json
+
+{ "id": 2, "name": "Luca Bianchi", "age": 15 }
+
+###
+
+GET {{9_CrudPersoneCSR_HostAddress}}/getAdults
+Accept: application/json
+
+###
+
+# Età negativa: il Service la rifiuta e il Controller risponde 400 Bad Request
+# EN: Negative age: the Service rejects it and the Controller answers 400 Bad Request
+POST {{9_CrudPersoneCSR_HostAddress}}/create
+Content-Type: application/json
+
+{ "id": 3, "name": "Anna Verdi", "age": -5 }
+
+###
+
 PUT {{9_CrudPersoneCSR_HostAddress}}/update
 Content-Type: application/json
 

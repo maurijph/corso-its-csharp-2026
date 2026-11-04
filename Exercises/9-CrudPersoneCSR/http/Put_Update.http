@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:5158
+@contentType = application/json
+
+##########################
+### Request: PUT /update
+##########################
+
+
+PUT {{baseUrl}}/update
+Content-Type: {{contentType}}
+
+{
+  "id": 0,
+  "name": "example",
+  "age": 0
+}
+

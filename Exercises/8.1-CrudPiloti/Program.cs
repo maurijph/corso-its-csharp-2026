@@ -88,7 +88,7 @@ app.MapDelete("/piloti/{id}", (int id) =>
 app.MapGet("/piloti/scuderia/{nome}", (string nome) =>
 {
     return piloti.Values
-        .Where(p => string.Equals(p.Scuderia, nome, StringComparison.OrdinalIgnoreCase))
+        .Where(p => string.Equals(p.Scuderia, nome, StringComparison.OrdinalIgnoreCase)) // controllare firma del metodo
         .ToArray();
 });
 

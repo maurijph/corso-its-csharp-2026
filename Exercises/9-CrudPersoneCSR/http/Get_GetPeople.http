@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:5158
+@contentType = application/json
+
+#############################
+### Request: GET /getPeople
+#############################
+
+
+GET {{baseUrl}}/getPeople
+Content-Type: {{contentType}}
+
+

@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:5158
+@contentType = application/json
+
+##################################
+### Request: GET /getPerson/{id}
+##################################
+
+### Path Parameter: id
+@id = 0
+
+
+GET {{baseUrl}}/getPerson/{{id}}
+Content-Type: {{contentType}}
+
+

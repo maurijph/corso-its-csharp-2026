@@ -1,0 +1,15 @@
+@baseUrl = http://localhost:5158
+@contentType = application/json
+
+##################################
+### Request: DELETE /delete/{id}
+##################################
+
+### Path Parameter: id
+@id = 0
+
+
+DELETE {{baseUrl}}/delete/{{id}}
+Content-Type: {{contentType}}
+
+

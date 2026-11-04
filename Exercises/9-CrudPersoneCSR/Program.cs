@@ -23,7 +23,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.MapAPIEndpoints();
+// Map.Post, Map.Put, Map.Delete non sono più in Program.cs, ma sono gestiti all'interno di MapAPIEndpoints (nel livello Controller)
+// EN: Map.Post, Map.Put, Map.Delete are handled inside MapAPIEndpoints (in the Controller layer)
+
+// Mappatura degli endpoint API, è il livello Controller che gestisce le richieste HTTP
+// EN: Mapping of API endpoints, it is the Controller layer that handles HTTP requests
+app.MapAPIEndpoints(); // Fare 'go to definition' per vedere dove sono definiti gli endpoint
 
 if (app.Environment.IsDevelopment())
 {
