@@ -1,0 +1,112 @@
+@baseUrl = http://localhost:5082
+@contentType = application/json
+
+# Le richieste seguono l'ordine della sezione "Che cosa provare" del README.
+# Eseguile dall'alto verso il basso, subito dopo aver avviato l'API.
+# EN: The requests follow the order of the "What to try" section of the README.
+# EN: Run them from top to bottom, right after starting the API.
+
+### 1. Tutti i piloti: 200 con Leclerc e Norris — EN: All drivers: 200 with Leclerc and Norris
+GET {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+### 2a. Un pilota: 200 con Leclerc — EN: One driver: 200 with Leclerc
+GET {{baseUrl}}/piloti/1
+Content-Type: {{contentType}}
+
+### 2b. Pilota inesistente: 404 — EN: Missing driver: 404
+GET {{baseUrl}}/piloti/99
+Content-Type: {{contentType}}
+
+### 3. Aggiungi Hamilton: 200 (la seconda volta 400) — EN: Add Hamilton: 200 (the second time 400)
+POST {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 3,
+  "nome": "Lewis Hamilton",
+  "scuderia": "Ferrari",
+  "numero": 44
+}
+
+### 4. Piloti Ferrari (minuscolo): 200 con Leclerc e Hamilton — EN: Ferrari drivers (lowercase): 200 with Leclerc and Hamilton
+GET {{baseUrl}}/piloti/scuderia/ferrari
+Content-Type: {{contentType}}
+
+### 5a. Nome vuoto: 400 — EN: Empty name: 400
+POST {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 4,
+  "nome": "",
+  "scuderia": "Red Bull",
+  "numero": 1
+}
+
+### 5b. Numero fuori da 1-99: 400 — EN: Number outside 1-99: 400
+POST {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 4,
+  "nome": "Max Verstappen",
+  "scuderia": "Red Bull",
+  "numero": 150
+}
+
+### 5c. Numero 16 già di Leclerc: 400 — EN: Number 16 already Leclerc's: 400
+POST {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 4,
+  "nome": "Max Verstappen",
+  "scuderia": "Red Bull",
+  "numero": 16
+}
+
+### 6a. Cambia il numero di Hamilton: 200 — EN: Change Hamilton's number: 200
+PUT {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 3,
+  "nome": "Lewis Hamilton",
+  "scuderia": "Ferrari",
+  "numero": 45
+}
+
+### 6b. Rileggi Hamilton: 200 con numero 45 — EN: Read Hamilton again: 200 with number 45
+GET {{baseUrl}}/piloti/3
+Content-Type: {{contentType}}
+
+### 7. Modifica di un id inesistente: 404 — EN: Change of a missing id: 404
+PUT {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 99,
+  "nome": "Fernando Alonso",
+  "scuderia": "Aston Martin",
+  "numero": 14
+}
+
+### Bonus 1. Piloti ordinati per numero — EN: Drivers sorted by number
+GET {{baseUrl}}/piloti/ordinati
+Content-Type: {{contentType}}
+
+### Bonus 2. Hamilton prova a prendere il 16 di Leclerc: 404 — EN: Hamilton tries to take Leclerc's 16: 404
+PUT {{baseUrl}}/piloti
+Content-Type: {{contentType}}
+
+{
+  "id": 3,
+  "nome": "Lewis Hamilton",
+  "scuderia": "Ferrari",
+  "numero": 16
+}
+
+### 8. Cancella Hamilton: 200 (la seconda volta 404) — EN: Delete Hamilton: 200 (the second time 404)
+DELETE {{baseUrl}}/piloti/3
+Content-Type: {{contentType}}

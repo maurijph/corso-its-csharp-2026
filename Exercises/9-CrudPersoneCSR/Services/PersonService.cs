@@ -36,7 +36,16 @@ public class PersonService
     }
 
 
-    /// Spiegare commenti! --> ///
+    /// <summary>
+    /// Crea una nuova persona se i dati sono validi.
+    /// EN: Creates a new person if the data is valid.
+    /// </summary>
+    /// <param name="person">La persona da creare.
+    /// EN: The person to create.
+    /// </param>
+    /// <returns>True se la persona è stata creata con successo, false altrimenti.
+    /// EN: True if the person was successfully created, false otherwise.
+    /// </returns>
     public bool Create(Person person)
     {
         // Dati non validi: il Repository non viene nemmeno chiamato
